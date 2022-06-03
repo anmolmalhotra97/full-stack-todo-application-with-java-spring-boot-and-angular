@@ -2,14 +2,18 @@
     <caption>My Todo's</caption>
     <thead>
         <tr>
-            <th>ID</th>
             <th>Description</th>
+            <th>Target Date</th>
+            <th>isCompleted?</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let todo of todos">
-            <td>{{todo.id}}</td>
             <td>{{todo.description}}</td>
+            <!-- pipe is used to convert one value to another -->
+            <!-- like full date to formatted date and UPPERCASE -->
+            <td>{{todo.targetDate | date | uppercase}}</td>
+            <td>{{todo.done}}</td>
         </tr>
     </tbody>
 </table>
