@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   //component event
   handleLogin() {
     if (this.username === "in28minutes" && this.password === "dummy") {
-      //Redirect to Welcome Page
-      this.router.navigate(['welcome'])
+      //Redirect to Welcome Page and pass the field username to component associated to route
+      this.router.navigate(['welcome', this.username])
       this.invalidLogin = false;
     } else {
       this.invalidLogin = true;
