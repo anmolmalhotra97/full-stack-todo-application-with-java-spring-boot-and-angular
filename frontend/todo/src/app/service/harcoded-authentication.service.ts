@@ -8,10 +8,10 @@ export class HarcodedAuthenticationService {
   constructor() { }
 
   authenticate(username: string, password: string): boolean {
-    console.log('before\t' + this.isUserLoggedIn())
+    // console.log('before\t' + this.isUserLoggedIn())
     if (username === "in28minutes" && password === "dummy") {
       sessionStorage.setItem('authenticatedUser', username);
-      console.log('after\t' + this.isUserLoggedIn())
+      // console.log('after\t' + this.isUserLoggedIn())
       return true;
     } else {
       return false;
@@ -22,6 +22,10 @@ export class HarcodedAuthenticationService {
     let user = sessionStorage.getItem('authenticatedUser')
     //if user is null returns not logged in
     return !(user === null)
-
   }
+
+  logout() {
+    sessionStorage.removeItem('authenticatedUser')
+  }
+
 }

@@ -3,13 +3,13 @@
         <div><a href="https://www.in28minutes.com" class="navbar-brand">in28minutes</a></div>
 
         <ul class="navbar-nav">
-            <li><a routerLink="/welcome/in28minutes" class="nav-link">Home</a></li>
-            <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+            <li *ngIf="hardCodedAuthenticationService.isUserLoggedIn()"><a routerLink="/welcome/in28minutes" class="nav-link">Home</a></li>
+            <li *ngIf="hardCodedAuthenticationService.isUserLoggedIn()"><a routerLink="/todos" class="nav-link">Todos</a></li>
         </ul>
 
         <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a routerLink="/login" class="nav-link">Login</a></li>
-            <li><a routerLink="/logout" class="nav-link">Logout</a></li>
+            <li *ngIf="!hardCodedAuthenticationService.isUserLoggedIn()"><a routerLink="/login" class="nav-link">Login</a></li>
+            <li *ngIf="hardCodedAuthenticationService.isUserLoggedIn()"><a routerLink="/logout" class="nav-link">Logout</a></li>
         </ul>
     </nav>
 </header>
