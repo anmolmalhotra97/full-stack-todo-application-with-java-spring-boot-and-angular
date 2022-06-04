@@ -10,6 +10,7 @@ import { HelloWorldBean, WelcomeDataService } from 'src/app/service/data/welcome
 
 export class WelcomeComponent implements OnInit {
 
+  name = 'Anmol'
   welcomeMessageFromService: string;
 
   //Activated Route
@@ -23,11 +24,24 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage() {
     this.welcomeDataService.executeHelloWorldBeanService().subscribe(
-      response => this.handleSuccessfulResponse(response)
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+  }
+
+  getWelcomeMessageWithPathVariable() {
+    this.welcomeDataService.executeHelloWorldServiceWithPathVariable(this.name).subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
     );
   }
 
   handleSuccessfulResponse(response: HelloWorldBean): void {
     this.welcomeMessageFromService = response.message;
   }
+
+  handleErrorResponse(error: any): void {
+    this.welcomeMessageFromService = error.error.message
+  }
 }
+

@@ -1,4 +1,4 @@
-package com.fullStackTodoAngularApp.rest.webservices;
+package com.fullStackTodoAngularApp.restful.webservices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

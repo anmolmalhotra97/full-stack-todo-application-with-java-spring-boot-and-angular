@@ -1,4 +1,4 @@
-package com.fullStackTodoAngularApp.rest.webservices;
+package com.fullStackTodoAngularApp.restful.webservices.helloworld;
 
 public class HelloWorldBean {
 

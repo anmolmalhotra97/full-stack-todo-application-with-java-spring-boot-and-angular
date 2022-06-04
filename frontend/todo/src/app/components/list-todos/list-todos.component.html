@@ -1,4 +1,8 @@
 <h1> MY TODO's</h1>
+
+<div class="alert alert-success" *ngIf="message">{{message}}</div>
+
+
 <div class="container">
     <table class="table">
         <thead>
@@ -15,6 +19,7 @@
                 <!-- like full date to formatted date and UPPERCASE -->
                 <td>{{todo.targetDate | date | uppercase}}</td>
                 <td>{{todo.done}}</td>
+                <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">DELETE</button></td>
             </tr>
         </tbody>
     </table>

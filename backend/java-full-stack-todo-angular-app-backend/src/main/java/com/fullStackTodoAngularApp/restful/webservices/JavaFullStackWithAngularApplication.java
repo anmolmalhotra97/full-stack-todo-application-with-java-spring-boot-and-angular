@@ -1,4 +1,4 @@
-package com.fullStackTodoAngularApp.rest.webservices;
+package com.fullStackTodoAngularApp.restful.webservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
