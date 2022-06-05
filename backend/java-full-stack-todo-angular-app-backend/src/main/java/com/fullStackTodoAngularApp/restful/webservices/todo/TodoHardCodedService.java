@@ -33,11 +33,25 @@ public class TodoHardCodedService {
         return null;
     }
 
-    private Todo findById(long id) {
+    public Todo findById(long id) {
         for (Todo todo : todos) {
             if (todo.getId() == id)
                 return todo;
         }
         return null;
+    }
+
+    public Todo save(Todo todo) {
+        //-1 indicates we want to saveTodo for the first time
+        if (todo.getId() == -1 || todo.getId() == 0) {
+            todo.setId(++idCounter);
+            todos.add(todo);
+        }
+        //this is for update of the existing todoDocument
+        else {
+            deleteById(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
     }
 }

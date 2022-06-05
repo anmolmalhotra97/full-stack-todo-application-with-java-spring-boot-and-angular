@@ -4,6 +4,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { ListTodosComponent } from './components/list-todos/list-todos.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { TodoComponent } from './components/todo/todo.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RouteGuardService } from './service/routeGuardService/route-guard.service';
 
@@ -14,8 +15,11 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
+  //list all todos
   { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
+  //create or update todo
+  { path: 'todos/:id', component: TodoComponent, canActivate: [RouteGuardService] },
 
   //IMPORTANT : THIS NEEDS TO BE AT THE LAST else NO ROUTE would work
   //Anything apart from the routes Defined

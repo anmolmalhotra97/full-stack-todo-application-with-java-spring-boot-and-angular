@@ -10,6 +10,8 @@
                 <th>Description</th>
                 <th>Target Date</th>
                 <th>isCompleted?</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +21,13 @@
                 <!-- like full date to formatted date and UPPERCASE -->
                 <td>{{todo.targetDate | date | uppercase}}</td>
                 <td>{{todo.done}}</td>
+                <td><button (click)="updateTodo(todo.id)" class="btn btn-success">UPDATE</button></td>
                 <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">DELETE</button></td>
             </tr>
         </tbody>
     </table>
+
+    <div class="row">
+        <button (click)="addTodo()" class="btn btn-success">Add New Todo</button>
+    </div>
 </div>
