@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AUTHENTICATED_USER } from './basic-authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +20,13 @@ export class HarcodedAuthenticationService {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('authenticatedUser')
+    let user = sessionStorage.getItem(AUTHENTICATED_USER)
     //if user is null returns not logged in
     return !(user === null)
   }
 
   logout() {
-    sessionStorage.removeItem('authenticatedUser')
+    sessionStorage.removeItem(AUTHENTICATED_USER)
   }
 
 }
