@@ -39,11 +39,27 @@ export class LoginComponent implements OnInit {
   //   }
   // }
 
+  // //component event
+  // handleBasicAuthLogin() {
+  //   this.basicAuthenticationService.executeAuthenticationService(this.username, this.password).subscribe(
+  //     response => {
+  //       console.log(response);
+  //       //Redirect to Welcome Page and pass the field username to component associated to route
+  //       this.router.navigate(['welcome', this.username])
+  //       this.invalidLogin = false;
+  //     },
+  //     error => {
+  //       console.log(error);
+  //       this.invalidLogin = true;
+  //     }
+  //   )
+  // }
+
   //component event
-  handleBasicAuthLogin() {
-    this.basicAuthenticationService.executeAuthenticationService(this.username, this.password).subscribe(
+  handleJWTAuthLogin() {
+    this.basicAuthenticationService.executeJWTAuthenticationService(this.username, this.password).subscribe(
       response => {
-        console.log(response);
+        // console.log(response);
         //Redirect to Welcome Page and pass the field username to component associated to route
         this.router.navigate(['welcome', this.username])
         this.invalidLogin = false;
